@@ -26,10 +26,22 @@ const Home = () => {
       <td>emon@gmail.com</td>
       <td>Web developer</td>
       <td>01782387758</td>
-      <td>
-        <button>View</button>
-        <button>Update</button>
-        <button>Delete</button>
+      <td className='d-flex justify-content-between'>
+        <button className='btn btn-success' ><i class="fa-sharp fa-solid fa-eye-slash"></i></button>
+        <button className='btn btn-primary'><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+        <button className='btn btn-danger'><i class="fa-solid fa-trash"></i></button>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>Emon</td>
+      <td>emon@gmail.com</td>
+      <td>Web developer</td>
+      <td>01782387758</td>
+      <td className='d-flex justify-content-between'>
+        <button className='btn btn-success' ><i class="fa-sharp fa-solid fa-eye-slash"></i></button>
+        <button className='btn btn-primary'><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+        <button className='btn btn-danger'><i class="fa-solid fa-trash"></i></button>
       </td>
     </tr>
   

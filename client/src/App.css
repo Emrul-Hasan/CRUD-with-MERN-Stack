@@ -1,3 +1,6 @@
 .add-btn{
   text-align: right;
 }
+.container{
+  overflow: auto;
+}
