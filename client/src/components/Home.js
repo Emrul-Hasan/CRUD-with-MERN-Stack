@@ -1,4 +1,7 @@
 import React from 'react';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 const Home = () => {
     return (
@@ -20,6 +23,7 @@ const Home = () => {
     </tr>
   </thead>
   <tbody>
+
     <tr>
       <th scope="row">1</th>
       <td>Emon</td>
@@ -27,9 +31,9 @@ const Home = () => {
       <td>Web developer</td>
       <td>01782387758</td>
       <td className='d-flex justify-content-between'>
-        <button className='btn btn-success' ><i class="fa-sharp fa-solid fa-eye-slash"></i></button>
-        <button className='btn btn-primary'><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
-        <button className='btn btn-danger'><i class="fa-solid fa-trash"></i></button>
+        <button className='btn btn-success' ><RemoveRedEyeIcon></RemoveRedEyeIcon></button>
+        <button className='btn btn-primary'><BorderColorIcon></BorderColorIcon></button>
+        <button className='btn btn-danger'><DeleteForeverIcon></DeleteForeverIcon></button>
       </td>
     </tr>
     <tr>
@@ -39,33 +43,9 @@ const Home = () => {
       <td>Web developer</td>
       <td>01782387758</td>
       <td className='d-flex justify-content-between'>
-        <button className='btn btn-success' ><i class="fa-sharp fa-solid fa-eye-slash"></i></button>
-        <button className='btn btn-primary'><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
-        <button className='btn btn-danger'><i class="fa-solid fa-trash"></i></button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>Emon</td>
-      <td>emon@gmail.com</td>
-      <td>Web developer</td>
-      <td>01782387758</td>
-      <td className='d-flex justify-content-between'>
-        <button className='btn btn-success' ><i class="fa-sharp fa-solid fa-eye-slash"></i></button>
-        <button className='btn btn-primary'><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
-        <button className='btn btn-danger'><i class="fa-solid fa-trash"></i></button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>Afifa Oishi</td>
-      <td>emon@gmail.com</td>
-      <td>Web developer</td>
-      <td>01782387758</td>
-      <td className='d-flex justify-content-between'>
-        <button className='btn btn-success' ><i class="fa-sharp fa-solid fa-eye-slash"></i></button>
-        <button className='btn btn-primary'><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
-        <button className='btn btn-danger'><i class="fa-solid fa-trash"></i></button>
+        <button className='btn btn-success' ><RemoveRedEyeIcon></RemoveRedEyeIcon></button>
+        <button className='btn btn-primary'><BorderColorIcon></BorderColorIcon></button>
+        <button className='btn btn-danger'><DeleteForeverIcon></DeleteForeverIcon></button>
       </td>
     </tr>
   
