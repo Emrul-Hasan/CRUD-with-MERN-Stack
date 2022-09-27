@@ -6,6 +6,8 @@ const users = require("../models/userSchema");
 //     console.log("connect");
 // });
 
+
+// Register Data
 router.post("/register",async(req,res)=>{
     const {name,email,age,mobile,work,add,desc} = req.body;
 
@@ -30,10 +32,21 @@ router.post("/register",async(req,res)=>{
 
     }
     catch(error){
-        res.status(404).json(error)
+        res.status(404).json(error);
     }
 })
 
+//get user data
+
+router.get("/getdata",async(req,res)=>{
+    try {
+        const userdata = await users.find();
+        res.status(201).json(userdata);
+        console.log(userdata);
+    } catch (error) {
+        res.status(404).json(error);
+    }
+})
 
 module.exports = router;
 

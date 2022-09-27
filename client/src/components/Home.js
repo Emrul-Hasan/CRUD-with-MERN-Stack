@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { NavLink } from 'react-router-dom';
 
 const Home = () => {
+  const [getUserData,setUserData] = useState([]);
+  console.log(getUserData);
+
+  const getdata = async(e)=>{
+
+    const res = await fetch("/getdata",
+    {
+        method:"GET",
+        headers:{
+            "Content-Type":"application/json"
+        },
+    });
+    const data = await res.json();
+    console.log(data);
+
+    if(res.status === 404 || !data){
+        console.log("error");
+    }
+    else{
+      setUserData(data);
+        console.log("get data")
+    }
+}
+
+useEffect (() =>{
+  getdata();
+},[])
+
     return (
         <div className=' bg-info' style={{background: "linear-gradient(45deg,#EFEBEB,#B7E5F9)" }}>
             <div className="container">
@@ -25,31 +53,27 @@ const Home = () => {
   </thead>
   <tbody>
 
-    <tr>
-      <th scope="row">1</th>
-      <td>Emon</td>
-      <td>emon@gmail.com</td>
-      <td>Web developer</td>
-      <td>01782387758</td>
+    {
+      getUserData.map((element,id)=>{
+        return(
+          <>
+             <tr>
+      <th scope="row">{id + 1}</th>
+      <td>{element.name}</td>
+      <td>{element.email}</td>
+      <td>{element.work}</td>
+      <td>{element.mobile}</td>
       <td className='d-flex justify-content-between'>
         <button className='btn btn-success' ><RemoveRedEyeIcon></RemoveRedEyeIcon></button>
         <button className='btn btn-primary'><BorderColorIcon></BorderColorIcon></button>
         <button className='btn btn-danger'><DeleteForeverIcon></DeleteForeverIcon></button>
       </td>
     </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>Emon</td>
-      <td>emon@gmail.com</td>
-      <td>Web developer</td>
-      <td>01782387758</td>
-      <td className='d-flex justify-content-between'>
-        <button className='btn btn-success' ><RemoveRedEyeIcon></RemoveRedEyeIcon></button>
-        <button className='btn btn-primary'><BorderColorIcon></BorderColorIcon></button>
-        <button className='btn btn-danger'><DeleteForeverIcon></DeleteForeverIcon></button>
-      </td>
-    </tr>
-  
+          </>
+        )
+      })
+    }
+
   
   </tbody>
 </table>
