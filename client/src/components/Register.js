@@ -18,6 +18,7 @@ const Register = () => {
     const setdata =(e)=>{
    console.log(e.target.value);
    const {name,value}=e.target;
+   setINP((preval)=>{
     return{
         ...preval,
         [name]:value
