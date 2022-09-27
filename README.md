@@ -3,9 +3,9 @@ _ _ _
 
 ### _Frontend Live:_
 ### _Backend Live:_
-_ _ 
+_ _
 
-** ***Technologies*** **
+** ***_Technologies_*** **
 * MongoDB
 * ExpressJS
 * React
