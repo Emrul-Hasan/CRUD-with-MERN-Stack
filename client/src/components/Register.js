@@ -25,6 +25,35 @@ const Register = () => {
     }
    })
     }
+
+    const addinpdata = async(e)=>{
+
+        e.preventDefault();
+        const {name,email,age, mobile, work, add, desc} = inpval;
+
+        const res = await fetch("/register",
+        {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(
+                {
+                    name,email,age, mobile, work, add, desc
+                })
+        });
+        const data = await res.json();
+        console.log(data);
+
+        if(res.status === 404 || !data){
+            alert("error");
+            console.log("error");
+        }
+        else{
+            alert("Data Added");
+            console.log("Data Added")
+        }
+    }
     return (
         <div className="container" >
         <NavLink to="/">home</NavLink>
@@ -59,7 +88,7 @@ const Register = () => {
                     <textarea name="desc"  value={inpval.desc} onChange={setdata} className="form-control" id="" cols="30" rows="5"></textarea>
                 </div>
 
-                <button type="submit"  class="btn btn-primary">Submit</button>
+                <button type="submit" onClick={addinpdata} class="btn btn-primary">Submit</button>
             </div>
         </form>
     </div>
