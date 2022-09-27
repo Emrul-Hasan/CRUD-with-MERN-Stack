@@ -1,9 +1,11 @@
-## Project Name : MERN Stack CRUD Operations
+## _Project Name : MERN Stack CRUD Operations_
 
-### Frontend Live:https://github.com/Emrul-Hasan/CRUD-with-MERN-Stack
-### Backend Live:()
+___
 
-** ***Technologies *** **
+### Frontend Live:  https://github.com/Emrul-Hasan/CRUD-with-MERN-Stack
+### Backend Live:  
+
+** ***Technologies*** **
 * MongoDB
 * ExpressJS
 * React
