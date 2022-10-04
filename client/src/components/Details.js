@@ -8,21 +8,22 @@ import DraftsIcon from '@mui/icons-material/Drafts';
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
 import PhoneIcon from '@mui/icons-material/Phone';
 import PlaceIcon from '@mui/icons-material/Place';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams,useNavigate, redirect } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
 
 const Details = () => {
-  const {id} = useParams("");
-  console.log(id);
+  
 
   const [getUserData,setUserData] = useState([]);
   console.log(getUserData);
 
+  const {id} = useParams("");
+  console.log(id);
   const getdata = async()=>{
 
-    const res = await fetch(`/getuser/${id}`,
+    const res = await fetch(`/getUser/${id}`,
     {
         method:"GET",
         headers:{
@@ -45,13 +46,36 @@ useEffect(()=>{
   getdata();
 },[])
 
+
+const deleteuser = async (id) => {
+
+  const res2 = await fetch(`/deleteuser/${id}`, {
+      method: "DELETE",
+      headers: {
+          "Content-Type": "application/json"
+      }
+  });
+
+  const deletedata = await res2.json();
+  console.log(deletedata);
+
+  if (res2.status === 422 || !deletedata) {
+      console.log("error");
+  } else {
+      console.log("user deleted");
+      redirect("/");
+      useNavigate.push("/");
+  }
+
+}
+
   return (
     <div className="container mt-3">
         <h1 style={{ fontWeight:400 }}> Welcome to Emrul Hasan</h1>
         <Card sx={{ maxWidth: 600 }}>
         <CardContent>
           <div className="add-btn">
-          <button className='btn btn-primary mx-2'><BorderColorIcon></BorderColorIcon></button>
+            <NavLink to={`/updateUser/${getUserData}`}><button className='btn btn-primary mx-2'><BorderColorIcon></BorderColorIcon></button></NavLink>
            <button className='btn btn-danger'><DeleteForeverIcon></DeleteForeverIcon></button>
           </div>
           <div className="row">

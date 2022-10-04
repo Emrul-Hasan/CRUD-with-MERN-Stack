@@ -64,5 +64,40 @@ router.get("/getuser/:id",async(req,res)=>{
 })
 
 
+
+// update user data
+
+router.patch("/updateuser/:id",async(req,res)=>{
+    try {
+        const {id} = req.params;
+
+        const updateduser = await users.findByIdAndUpdate(id,req.body,{
+            new:true
+        });
+
+        console.log(updateduser);
+        res.status(201).json(updateduser);
+
+    } catch (error) {
+        res.status(422).json(error);
+    }
+})
+
+// delete user
+router.delete("/deleteuser/:id",async(req,res)=>{
+    try {
+        const {id} = req.params;
+
+        const deletuser = await users.findByIdAndDelete({_id:id})
+        console.log(deletuser);
+        res.status(201).json(deletuser);
+
+    } catch (error) {
+        res.status(422).json(error);
+    }
+})
+
+
+
 module.exports = router;
 
