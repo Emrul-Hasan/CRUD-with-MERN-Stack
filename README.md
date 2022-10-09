@@ -1,8 +1,8 @@
 ## _Project Name : MERN Stack CRUD Operations_
 _ _ _
 
-### _Frontend Live:_
-### _Backend Live:_
+### _Frontend Live:https://helpful-raindrop-2841c5.netlify.app/
+### _Backend Live:https://git.heroku.com/crudbymern.git
 _ _ _
 
 ** ***Technologies*** **

@@ -18,7 +18,6 @@ const ContextProvider = ({ children }) => {
                 <deldata.Provider value={{dltdata, setDLTdata}}>
                     {children}
                 </deldata.Provider>
-
             </updatedata.Provider>
 
         </adddata.Provider>

@@ -86,8 +86,23 @@ const deleteuser = async (id) => {
     </tr>
   </thead>
   <tbody>
+  <tr>
+      <th scope="row">1</th>
+      <td>Emrul Hasan</td>
+      <td>imrul@gmail.com</td>
+      <td>Web developer</td>
+      <td>01782387758</td>
+      <td className='d-flex justify-content-between'>
+        <NavLink ><button className='btn btn-success' >View  <RemoveRedEyeIcon></RemoveRedEyeIcon></button></NavLink>
+        <NavLink ><button className='btn btn-primary'>Edit<BorderColorIcon></BorderColorIcon></button></NavLink>
+        <button className='btn btn-danger'>Delete<DeleteForeverIcon></DeleteForeverIcon></button>
+      </td>
+      
+    </tr>
 
     {
+
+      
       getUserData.map((element,id)=>{
         return(
           <>
@@ -98,11 +113,13 @@ const deleteuser = async (id) => {
       <td>{element.work}</td>
       <td>{element.mobile}</td>
       <td className='d-flex justify-content-between'>
-        <NavLink to={`view/${element._id}`}><button className='btn btn-success' ><RemoveRedEyeIcon></RemoveRedEyeIcon></button></NavLink>
-        <NavLink to={`edit/${element._id}`}><button className='btn btn-primary'><BorderColorIcon></BorderColorIcon></button></NavLink>
-        <button className='btn btn-danger' onClick={() => deleteuser(element._id)}><DeleteForeverIcon></DeleteForeverIcon></button>
+        <NavLink to={`view/${element._id}`}><button className='btn btn-success' >View  <RemoveRedEyeIcon></RemoveRedEyeIcon></button></NavLink>
+        <NavLink to={`edit/${element._id}`}><button className='btn btn-primary'>Edit<BorderColorIcon></BorderColorIcon></button></NavLink>
+        <button className='btn btn-danger' onClick={() => deleteuser(element._id)}>Delete<DeleteForeverIcon></DeleteForeverIcon></button>
       </td>
+      
     </tr>
+             
           </>
         )
       })

@@ -7,9 +7,14 @@ const users = require("./models/userSchema");
 const cors = require("cors");
 const router = require("./routes/router")
 
-const port =  8003;
+const port = process.env.PORT || 8003;
 app.use(cors());
 app.use(express.json());
+
+
+app.get("/",(req,res)=>{
+    res.json("Server Starting");
+})
 
 app.use(router);
 
