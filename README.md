@@ -1,10 +1,6 @@
 ## _Project Name : MERN Stack CRUD Operations_
 _ _ _
 
-### _Frontend Live:https://helpful-raindrop-2841c5.netlify.app/
-### _Backend Live:https://git.heroku.com/crudbymern.git
-_ _ _
-
 ** ***Technologies*** **
 * MongoDB
 * ExpressJS
@@ -16,13 +12,11 @@ _ _ _
 * react-router-dom
 * axios
 
-
 ** ***Back-end dependencies*** **
 * cors
 * dotenv
 * express
 * mongoose
-
 
 ** ***REST API*** **
 * GET	
@@ -33,3 +27,7 @@ _ _ _
 
 ** ***Test REST API’s*** **
 * Postman
+
+### _Frontend Live:https://helpful-raindrop-2841c5.netlify.app/_
+### _Backend Live:https://git.heroku.com/crudbymern.git_
+_ _ _
